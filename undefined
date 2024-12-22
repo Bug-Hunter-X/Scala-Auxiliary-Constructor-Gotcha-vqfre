@@ -1,0 +1,23 @@
+```scala
+class MyClass(val x: Int) {
+  def this() = this(0) // Auxiliary constructor
+  def myMethod(): Int = {
+    x + 1 
+  }
+
+  //Adding a method to explicitly access the x value for clarity
+  def getX():Int = {
+    x
+  }
+}
+
+object Main extends App{
+  val obj = new MyClass()
+  println(obj.myMethod()) //Prints 1
+  println(obj.getX()) //Prints 0
+
+  val obj2 = new MyClass(5)
+  println(obj2.myMethod()) // Prints 6
+  println(obj2.getX()) //Prints 5
+}
+```
